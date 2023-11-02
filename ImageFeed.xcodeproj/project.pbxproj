@@ -13,6 +13,9 @@
 		0C2E407C2ADFCD69009F3FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E407B2ADFCD69009F3FB4 /* Assets.xcassets */; };
 		0C2E407F2ADFCD69009F3FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2E407D2ADFCD69009F3FB4 /* LaunchScreen.storyboard */; };
 		0C4512502AEDB8C5005EEDEE /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C45124F2AEDB8C5005EEDEE /* ImagesListCell.swift */; };
+		0C4512552AF3A6EB005EEDEE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4512542AF3A6EB005EEDEE /* TabBarController.swift */; };
+		0C4512572AF3A714005EEDEE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4512562AF3A713005EEDEE /* ProfileViewController.swift */; };
+		0C45125A2AF3A72B005EEDEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4512592AF3A72B005EEDEE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		0C2E407E2ADFCD69009F3FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C2E40802ADFCD69009F3FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C45124F2AEDB8C5005EEDEE /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
+		0C4512542AF3A6EB005EEDEE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		0C4512562AF3A713005EEDEE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0C4512592AF3A72B005EEDEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,15 @@
 		0C2E40712ADFCD67009F3FB4 /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				0C4512582AF3A71B005EEDEE /* Helpers */,
+				0C4512532AF3A6D2005EEDEE /* Profile */,
 				0C4512512AEDBFBC005EEDEE /* ImagesList */,
 				0C2E40722ADFCD67009F3FB4 /* AppDelegate.swift */,
 				0C2E40742ADFCD67009F3FB4 /* SceneDelegate.swift */,
 				0C2E407B2ADFCD69009F3FB4 /* Assets.xcassets */,
 				0C2E407D2ADFCD69009F3FB4 /* LaunchScreen.storyboard */,
 				0C2E40802ADFCD69009F3FB4 /* Info.plist */,
+				0C4512542AF3A6EB005EEDEE /* TabBarController.swift */,
 			);
 			path = ImageFeed;
 			sourceTree = "<group>";
@@ -69,10 +78,34 @@
 		0C4512512AEDBFBC005EEDEE /* ImagesList */ = {
 			isa = PBXGroup;
 			children = (
+				0C4512522AF3A6C3005EEDEE /* Cell */,
 				0C2E40762ADFCD67009F3FB4 /* ImagesListViewController.swift */,
-				0C45124F2AEDB8C5005EEDEE /* ImagesListCell.swift */,
 			);
 			path = ImagesList;
+			sourceTree = "<group>";
+		};
+		0C4512522AF3A6C3005EEDEE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C45124F2AEDB8C5005EEDEE /* ImagesListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0C4512532AF3A6D2005EEDEE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0C4512562AF3A713005EEDEE /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0C4512582AF3A71B005EEDEE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C4512592AF3A72B005EEDEE /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4512572AF3A714005EEDEE /* ProfileViewController.swift in Sources */,
 				0C2E40772ADFCD67009F3FB4 /* ImagesListViewController.swift in Sources */,
 				0C4512502AEDB8C5005EEDEE /* ImagesListCell.swift in Sources */,
 				0C2E40732ADFCD67009F3FB4 /* AppDelegate.swift in Sources */,
+				0C45125A2AF3A72B005EEDEE /* Constants.swift in Sources */,
+				0C4512552AF3A6EB005EEDEE /* TabBarController.swift in Sources */,
 				0C2E40752ADFCD67009F3FB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
