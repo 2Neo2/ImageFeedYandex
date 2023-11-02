@@ -43,6 +43,11 @@ final class ImagesListViewController: UIViewController {
         ])
     }
     
+    // MARK: Override property which set style for StatusBar.
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func insertSubviews() {
         view.addSubview(tableView)
     }
@@ -61,7 +66,6 @@ extension ImagesListViewController: UITableViewDataSource {
         }
         
         let isLiked = indexPath.row % 2 == 0
-        print( photosName[indexPath.row])
         imageListCell.configureCell(for: photosName[indexPath.row], with: isLiked)
         imageListCell.selectionStyle = .none
         return imageListCell

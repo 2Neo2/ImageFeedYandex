@@ -37,8 +37,7 @@ final class ImagesListCell: UITableViewCell {
     private lazy var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(ImagesListCell.self, action: #selector(buttonTapHandler), for: .touchUpInside)
-        button.setImage(UIImage(named: "active_like"), for: .normal)
+        button.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -50,14 +49,6 @@ final class ImagesListCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func buttonTapHandler() {
-        if self.isActive {
-            button.setImage(UIImage(named: "active_like"), for: .normal)
-        } else {
-            button.setImage(UIImage(named: "no_active_like"), for: .normal)
-        }
     }
     
     private func setupView() {
@@ -78,17 +69,17 @@ final class ImagesListCell: UITableViewCell {
         ))
     }
     
-    func configureCell(for imageName: String, with islike: Bool) {
+    func configureCell(for imageName: String, with isLike: Bool) {
         guard let image = UIImage(named: imageName) else {
             return
         }
         
-        self.isActive = islike
+        self.isActive = isLike
         
         imageContent.image = image
         labelDate.text = dateFormatter.string(from: Date())
     
-        button.setImage(islike ? UIImage(named: "active_like") : UIImage(named: "no_active_like"), for: .normal)
+        button.setImage(isLike ? UIImage(named: "active_like") : UIImage(named: "no_active_like"), for: .normal)
         setupView()
         layoutView()
     }
@@ -105,5 +96,13 @@ final class ImagesListCell: UITableViewCell {
             button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
             button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4)
         ])
+    }
+    
+    @objc private func likeButtonPressed() {
+       isActive = !isActive
+        button.setImage(
+            self.isActive ? UIImage(named: "active_like") : UIImage(named: "no_active_like"),
+            for: .normal
+        )
     }
 }
